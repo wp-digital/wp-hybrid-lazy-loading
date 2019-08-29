@@ -1,0 +1,23 @@
+{
+  "name": "innocode-digital/wp-hybrid-lazy-loading",
+  "version": "1.0.0",
+  "description": "A Progressive Migration To Native Lazy Loading.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=7.0",
+    "ext-dom": "*",
+    "ext-libxml": "*"
+  },
+  "authors": [
+    {
+      "name": "Innocode",
+      "email": "post@innocode.no",
+      "homepage": "https://innocode.com/"
+    },
+    {
+      "name": "Viktor Kuliebiakin",
+      "email": "kuliebiakin@gmail.com"
+    }
+  ]
+}

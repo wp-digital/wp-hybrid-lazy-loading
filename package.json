@@ -1,0 +1,47 @@
+{
+  "name": "wp-hybrid-lazy-loading",
+  "version": "1.0.0",
+  "description": "A Progressive Migration To Native Lazy Loading.",
+  "main": "./assets/src/js/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Innocode",
+    "email": "post@innocode.no",
+    "homepage": "https://innocode.com/"
+  },
+  "contributors": [
+    {
+      "name": "Viktor Kuliebiakin",
+      "email": "kuliebiakin@gmail.com"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@wordpress/dom-ready": "^2.5.0",
+    "lazysizes": "^5.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.5.5",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.1.0",
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs": "0.0.1-security",
+    "node-notifier": "^5.4.3",
+    "path": "^0.12.7",
+    "prettier": "^1.18.2",
+    "webpack": "^4.39.3"
+  }
+}
