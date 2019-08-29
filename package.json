@@ -1,6 +1,6 @@
 {
   "name": "wp-hybrid-lazy-loading",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Progressive Migration To Native Lazy Loading.",
   "homepage": "https://github.com/innocode-digital/wp-hybrid-lazy-loading#readme",
   "main": "./assets/src/js/index.js",
