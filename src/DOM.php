@@ -9,6 +9,8 @@ namespace Innocode\WPHybridLazyLoading;
 final class DOM
 {
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to elements in HTML code
+     *
      * @param string $tag
      * @param string $html
      * @return string
@@ -104,6 +106,8 @@ final class DOM
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to images in HTML code
+     *
      * @param string $html
      * @return string
      */
@@ -113,6 +117,8 @@ final class DOM
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to iframes in HTML code
+     *
      * @param string $html
      * @return string
      */
@@ -122,6 +128,8 @@ final class DOM
     }
 
     /**
+     * Retrieves attachment ID from WordPress image CSS class
+     *
      * @param string $html
      *
      * @return int|false
@@ -136,6 +144,8 @@ final class DOM
     }
 
     /**
+     * Finds attachment ID in element CSS classes
+     *
      * @param array $classes
      *
      * @return int|false

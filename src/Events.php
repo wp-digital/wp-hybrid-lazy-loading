@@ -11,6 +11,9 @@ use WP_Post;
  */
 final class Events
 {
+    /**
+     * Registers hooks
+     */
     public static function register()
     {
         add_action( 'wp_enqueue_scripts', [ __CLASS__, 'enqueue_scripts' ] );
@@ -23,12 +26,17 @@ final class Events
         add_filter( 'the_content', [ __CLASS__, 'filter_content' ] );
     }
 
+    /**
+     * Enqueue assets
+     */
     public static function enqueue_scripts()
     {
         Assets::enqueue_scripts();
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to attachment image
+     *
      * @param array    $attrs
      * @param WP_Post $attachment
      * @return array
@@ -59,6 +67,8 @@ final class Events
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to oEmbed iframe
+     *
      * @param string $html
      * @return string
      */
@@ -68,6 +78,8 @@ final class Events
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to oEmbed iframe
+     *
      * @param string $html
      * @return string
      */
@@ -81,6 +93,8 @@ final class Events
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to avatars
+     *
      * @param string $html
      * @return string
      */
@@ -90,6 +104,8 @@ final class Events
     }
 
     /**
+     * Adds "loading" attribute and "lazyload" CSS class to images and iframes in content
+     *
      * @param string $html
      * @return string
      */

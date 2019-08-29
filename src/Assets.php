@@ -9,6 +9,8 @@ namespace Innocode\WPHybridLazyLoading;
 final class Assets
 {
     /**
+     * Returns assets path URL
+     *
      * @param string $path
      * @return string
      */
@@ -17,6 +19,9 @@ final class Assets
         return plugins_url( "assets/$path", INNOCODE_WP_HYBRID_LAZY_LOADING_FILE );
     }
 
+    /**
+     * Enqueue assets files
+     */
     public static function enqueue_scripts()
     {
         $suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
