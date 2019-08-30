@@ -81,7 +81,7 @@ be loaded lazily, it's possible to use next methods:
  * @param string $html
  * @return string
  */
-\Innocode\WPHybridLazyLoading\DOM::images();
+\Innocode\WPHybridLazyLoading\DOM::images( $html );
 
 /**
  * Adds "loading" attribute and "lazyload" CSS class to iframes in HTML code
