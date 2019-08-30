@@ -27,7 +27,7 @@ or use [Composer](https://getcomposer.org/) for that.
 Activate **Hybrid Lazy Loading** from Plugins page 
 or [WP-CLI](https://make.wordpress.org/cli/handbook/): `wp plugin activate wp-hybrid-lazy-loading`.
 
-## Configuration
+## Documentation
 
 By default plugin loads [lazysizes](https://github.com/aFarkas/lazysizes) lazily, which means only 
 for ones that are w/o [Native Lazy Loading](https://web.dev/native-lazy-loading) support but it's 
@@ -37,7 +37,7 @@ possible to change this behaviour with filter:
 add_filter( 'innocode_wp_hybrid_lazy_loading_lazy_enqueue_lazysizes', '__return_false' ); // Default is "true"
 ```
 
-It makes sense when you e.g. use [lazysizes](https://github.com/aFarkas/lazysizes) also for other
+It makes sense when e.g. [lazysizes](https://github.com/aFarkas/lazysizes) is using also for other
 functionality.
 
 ---
@@ -50,7 +50,7 @@ this behaviour with filter:
 add_filter( 'innocode_wp_hybrid_lazy_loading_force_use_lazysizes', '__return_true' ); // Default is "false"
 ```
 
-It makes sense when you e.g. want to use 
+It makes sense when e.g. it's needed to use 
 [lazysizes CSS classes](https://github.com/aFarkas/lazysizes#css-api) that are adding to element 
 during loading process in all browsers.
 
@@ -67,4 +67,36 @@ add_filter( 'innocode_wp_hybrid_lazy_loading_attachment_loading', function ( $ty
 }, 10, 2 );
 ```
 
-It makes sense when you e.g. want to load featured image immediately. 
+It makes sense when e.g. featured image should be loaded immediately.
+
+---
+
+If there are images and iframes that are rendered in PHP code of theme or plugin and they should
+be loaded lazily, it's possible to use next methods:
+
+```
+/**
+ * Adds "loading" attribute and "lazyload" CSS class to images in HTML code
+ *
+ * @param string $html
+ * @return string
+ */
+\Innocode\WPHybridLazyLoading\DOM::images();
+
+/**
+ * Adds "loading" attribute and "lazyload" CSS class to iframes in HTML code
+ *
+ * @param string $html
+ * @return string
+ */
+\Innocode\WPHybridLazyLoading\DOM::iframes( $html );
+
+/**
+ * Adds "loading" attribute and "lazyload" CSS class to elements in HTML code by tag
+ *
+ * @param string $tag
+ * @param string $html
+ * @return string
+ */
+\Innocode\WPHybridLazyLoading\DOM::elements( $tag, $html );
+```

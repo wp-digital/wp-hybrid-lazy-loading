@@ -9,7 +9,7 @@ namespace Innocode\WPHybridLazyLoading;
 final class DOM
 {
     /**
-     * Adds "loading" attribute and "lazyload" CSS class to elements in HTML code
+     * Adds "loading" attribute and "lazyload" CSS class to elements in HTML code by tag
      *
      * @param string $tag
      * @param string $html
