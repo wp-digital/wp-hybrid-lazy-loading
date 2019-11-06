@@ -1,3 +1,6 @@
+# Lock file because it's a plugin
+composer.lock
+
 # Dependency directories
 node_modules/
 jspm_packages/

@@ -22,11 +22,11 @@ final class DOM
         }
 
         // <script /> may contains html template with tags
-        $scripts_regex = '/<script[^>]*>.+?<\/script>/si';
+        $scripts_regex = '/<script\b[^>]*>.*?<\/script>/si';
         $scripts = '';
 
         if ( preg_match_all( $scripts_regex, $html, $scripts_matches, PREG_PATTERN_ORDER ) ) {
-            foreach ( $scripts_matches[ 0 ] as $script ) {
+            foreach ( array_unique( $scripts_matches[ 0 ] ) as $script ) {
                 $html = str_replace( $script, '', $html );
                 $scripts .= $script;
             }
