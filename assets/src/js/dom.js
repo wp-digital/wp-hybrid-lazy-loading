@@ -1,4 +1,4 @@
-export const useNative = element => {
+export const useNative = (element) => {
   const { forceUseLazysizes } = window.innocodeWPHybridLazyLoadingConfig;
 
   if (element.dataset.src) {
@@ -18,5 +18,5 @@ export const useNative = element => {
   }
 };
 
-export const useNativeAll = elements =>
-  elements.forEach(element => useNative(element));
+export const useNativeAll = (elements) =>
+  elements.forEach((element) => useNative(element));

@@ -6,7 +6,7 @@ window.InnocodeWPHybridLazyLoading = window.InnocodeWPHybridLazyLoading || {};
 window.InnocodeWPHybridLazyLoading.useNative = useNative;
 window.InnocodeWPHybridLazyLoading.useNativeAll = useNativeAll;
 
-domReady(() => {
+domReady(async () => {
   const { lazyEnqueueLazysizes } = window.innocodeWPHybridLazyLoadingConfig;
   const hasImageLoadingSupport = 'loading' in HTMLImageElement.prototype;
   const hasIFrameLoadingSupport = 'loading' in HTMLIFrameElement.prototype;
@@ -19,18 +19,18 @@ domReady(() => {
     useNativeAll(document.querySelectorAll('iframe.lazyload'));
   }
 
-  if (lazyEnqueueLazysizes) {
-    if (!hasImageLoadingSupport || !hasIFrameLoadingSupport) {
-      import('lazysizes');
-    }
-  } else {
-    import('lazysizes');
-    import('lazysizes/plugins/native-loading/ls.native-loading');
-  }
-
-  document.addEventListener('lazybeforeunveil', event => {
+  document.addEventListener('lazybeforeunveil', (event) => {
     if ('loading' in event.target) {
       useNative(event.target);
     }
   });
+
+  if (lazyEnqueueLazysizes) {
+    if (!hasImageLoadingSupport || !hasIFrameLoadingSupport) {
+      await import('lazysizes');
+    }
+  } else {
+    await import('lazysizes');
+    await import('lazysizes/plugins/native-loading/ls.native-loading');
+  }
 });

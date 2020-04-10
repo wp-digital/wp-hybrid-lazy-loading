@@ -1,10 +1,12 @@
 {
   "name": "wp-hybrid-lazy-loading",
-  "version": "1.0.5",
+  "version": "1.2.0",
   "description": "A Progressive Migration To Native Lazy Loading.",
   "homepage": "https://github.com/innocode-digital/wp-hybrid-lazy-loading#readme",
   "main": "./assets/src/js/index.js",
   "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
@@ -20,29 +22,30 @@
   ],
   "license": "GPL-2.0-or-later",
   "dependencies": {
-    "@wordpress/dom-ready": "^2.5.0",
-    "lazysizes": "^5.1.1"
+    "@wordpress/dom-ready": "^2.8.0",
+    "lazysizes": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.5.5",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
-    "eslint": "^6.2.2",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-loader": "^3.0.0",
-    "eslint-plugin-import": "^2.18.2",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-loader": "^4.0.0",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs": "0.0.1-security",
-    "node-notifier": "^5.4.3",
+    "node-notifier": "^7.0.0",
     "path": "^0.12.7",
-    "prettier": "^1.18.2",
-    "webpack": "^4.39.3"
+    "prettier": "^2.0.4",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
