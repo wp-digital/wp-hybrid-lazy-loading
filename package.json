@@ -23,7 +23,7 @@
   "license": "GPL-2.0-or-later",
   "dependencies": {
     "@wordpress/dom-ready": "^2.8.0",
-    "lazysizes": "^5.2.0"
+    "lazysizes": "^5.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
