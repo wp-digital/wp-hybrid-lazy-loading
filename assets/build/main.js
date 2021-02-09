@@ -276,8 +276,7 @@ window.InnocodeWPHybridLazyLoading.useNative = _dom__WEBPACK_IMPORTED_MODULE_2__
 window.InnocodeWPHybridLazyLoading.useNativeAll = _dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"];
 Object(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__["default"])(function () {
   var lazyEnqueueLazysizes = window.innocodeWPHybridLazyLoadingConfig.lazyEnqueueLazysizes;
-  var hasImageLoadingSupport = false; // 'loading' in HTMLImageElement.prototype;
-
+  var hasImageLoadingSupport = ('loading' in HTMLImageElement.prototype);
   var hasIFrameLoadingSupport = ('loading' in HTMLIFrameElement.prototype);
 
   if (hasImageLoadingSupport) {

@@ -8,7 +8,7 @@ window.InnocodeWPHybridLazyLoading.useNativeAll = useNativeAll;
 
 domReady(() => {
   const { lazyEnqueueLazysizes } = window.innocodeWPHybridLazyLoadingConfig;
-  const hasImageLoadingSupport = false; // 'loading' in HTMLImageElement.prototype;
+  const hasImageLoadingSupport = 'loading' in HTMLImageElement.prototype;
   const hasIFrameLoadingSupport = 'loading' in HTMLIFrameElement.prototype;
 
   if (hasImageLoadingSupport) {
