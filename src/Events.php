@@ -37,32 +37,34 @@ final class Events
     /**
      * Adds "loading" attribute and "lazyload" CSS class to attachment image
      *
-     * @param array $attrs
-     * @param       $attachment
+     * @param array        $attrs
+     * @param WP_Post|null $attachment
      *
      * @return array
      */
-    public static function add_attachment_image_attributes( array $attrs, $attachment )
+    public static function add_attachment_image_attributes( array $attrs, WP_Post $attachment = null )
     {
-        if( null != $attachment ) {
-            $loading = Hooks::attachment_loading( $attachment->ID );
-            $attrs['loading'] = $loading;
+        if ( ! $attachment ) {
+            return $attrs;
+        }
 
-            if ( $loading != 'lazy' ) {
-                return $attrs;
-            }
+        $loading = Hooks::attachment_loading( $attachment->ID );
+        $attrs['loading'] = $loading;
 
-            $attrs['class'] .= ' lazyload';
+        if ( $loading != 'lazy' ) {
+            return $attrs;
+        }
 
-            foreach ( [
-                'src',
-                'srcset',
-                'sizes',
-            ] as $attr ) {
-                if ( isset( $attrs[ $attr ] ) ) {
-                    $attrs[ "data-$attr" ] = $attrs[ $attr ];
-                    unset( $attrs[ $attr ] );
-                }
+        $attrs['class'] .= ' lazyload';
+
+        foreach ( [
+            'src',
+            'srcset',
+            'sizes',
+        ] as $attr ) {
+            if ( isset( $attrs[ $attr ] ) ) {
+                $attrs[ "data-$attr" ] = $attrs[ $attr ];
+                unset( $attrs[ $attr ] );
             }
         }
 
