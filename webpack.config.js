@@ -1,4 +1,3 @@
-const fs = require('fs');
 const notifier = require('node-notifier');
 const path = require('path');
 const webpack = require('webpack');
