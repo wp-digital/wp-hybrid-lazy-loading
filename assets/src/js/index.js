@@ -6,9 +6,9 @@ window.InnocodeWPHybridLazyLoading = window.InnocodeWPHybridLazyLoading || {};
 window.InnocodeWPHybridLazyLoading.useNative = useNative;
 window.InnocodeWPHybridLazyLoading.useNativeAll = useNativeAll;
 
-domReady(async () => {
+domReady(() => {
   const { lazyEnqueueLazysizes } = window.innocodeWPHybridLazyLoadingConfig;
-  const hasImageLoadingSupport = 'loading' in HTMLImageElement.prototype;
+  const hasImageLoadingSupport = false; // 'loading' in HTMLImageElement.prototype;
   const hasIFrameLoadingSupport = 'loading' in HTMLIFrameElement.prototype;
 
   if (hasImageLoadingSupport) {
@@ -27,10 +27,12 @@ domReady(async () => {
 
   if (lazyEnqueueLazysizes) {
     if (!hasImageLoadingSupport || !hasIFrameLoadingSupport) {
-      await import('lazysizes');
+      // eslint-disable-next-line no-unused-expressions
+      import('lazysizes');
     }
   } else {
-    await import('lazysizes');
-    await import('lazysizes/plugins/native-loading/ls.native-loading');
+    import('lazysizes').then(() =>
+      import('lazysizes/plugins/native-loading/ls.native-loading')
+    );
   }
 });

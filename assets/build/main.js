@@ -268,72 +268,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _publicPath__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./publicPath */ "zTeU");
 /* harmony import */ var _publicPath__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_publicPath__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./dom */ "mSal");
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
 
 
 
 window.InnocodeWPHybridLazyLoading = window.InnocodeWPHybridLazyLoading || {};
 window.InnocodeWPHybridLazyLoading.useNative = _dom__WEBPACK_IMPORTED_MODULE_2__["useNative"];
 window.InnocodeWPHybridLazyLoading.useNativeAll = _dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"];
-Object(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-  var lazyEnqueueLazysizes, hasImageLoadingSupport, hasIFrameLoadingSupport;
-  return regeneratorRuntime.wrap(function _callee$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          lazyEnqueueLazysizes = window.innocodeWPHybridLazyLoadingConfig.lazyEnqueueLazysizes;
-          hasImageLoadingSupport = 'loading' in HTMLImageElement.prototype;
-          hasIFrameLoadingSupport = 'loading' in HTMLIFrameElement.prototype;
+Object(_wordpress_dom_ready__WEBPACK_IMPORTED_MODULE_0__["default"])(function () {
+  var lazyEnqueueLazysizes = window.innocodeWPHybridLazyLoadingConfig.lazyEnqueueLazysizes;
+  var hasImageLoadingSupport = false; // 'loading' in HTMLImageElement.prototype;
 
-          if (hasImageLoadingSupport) {
-            Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"])(document.querySelectorAll('img.lazyload'));
-          }
+  var hasIFrameLoadingSupport = ('loading' in HTMLIFrameElement.prototype);
 
-          if (hasIFrameLoadingSupport) {
-            Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"])(document.querySelectorAll('iframe.lazyload'));
-          }
+  if (hasImageLoadingSupport) {
+    Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"])(document.querySelectorAll('img.lazyload'));
+  }
 
-          document.addEventListener('lazybeforeunveil', function (event) {
-            if ('loading' in event.target) {
-              Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNative"])(event.target);
-            }
-          });
+  if (hasIFrameLoadingSupport) {
+    Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNativeAll"])(document.querySelectorAll('iframe.lazyload'));
+  }
 
-          if (!lazyEnqueueLazysizes) {
-            _context.next = 12;
-            break;
-          }
-
-          if (!(!hasImageLoadingSupport || !hasIFrameLoadingSupport)) {
-            _context.next = 10;
-            break;
-          }
-
-          _context.next = 10;
-          return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! lazysizes */ "s+lh", 7));
-
-        case 10:
-          _context.next = 16;
-          break;
-
-        case 12:
-          _context.next = 14;
-          return __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! lazysizes */ "s+lh", 7));
-
-        case 14:
-          _context.next = 16;
-          return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.t.bind(null, /*! lazysizes/plugins/native-loading/ls.native-loading */ "GfCq", 7));
-
-        case 16:
-        case "end":
-          return _context.stop();
-      }
+  document.addEventListener('lazybeforeunveil', function (event) {
+    if ('loading' in event.target) {
+      Object(_dom__WEBPACK_IMPORTED_MODULE_2__["useNative"])(event.target);
     }
-  }, _callee);
-})));
+  });
+
+  if (lazyEnqueueLazysizes) {
+    if (!hasImageLoadingSupport || !hasIFrameLoadingSupport) {
+      // eslint-disable-next-line no-unused-expressions
+      __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! lazysizes */ "s+lh", 7));
+    }
+  } else {
+    __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! lazysizes */ "s+lh", 7)).then(function () {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.t.bind(null, /*! lazysizes/plugins/native-loading/ls.native-loading */ "GfCq", 7));
+    });
+  }
+});
 
 /***/ }),
 
